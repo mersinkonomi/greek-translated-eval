@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "protocol": "greek_translated_reasoning_v1",
+  "expected_samples_per_model": 55401,
+  "benchmarks": {
+    "mmlu": {
+      "dataset": "ilsp/mmlu_greek",
+      "config": null,
+      "revision": "5185752b1015abb6bb96c6ed7e860b92a194484a",
+      "split": "test",
+      "shots": 5,
+      "expected_samples": 14042,
+      "data_sha256": "ff268d239948daf5d7c07d9ca2db4db9d7a21bc1b2ed5ea8ac0aab139ec356eb"
+    },
+    "mmlu_pro": {
+      "dataset": "ilsp/MMLU-Pro_greek",
+      "config": "default",
+      "revision": "15c371a1e604fc1b43168d2b613a87027767f7de",
+      "split": "test",
+      "shots": 0,
+      "expected_samples": 12032,
+      "data_sha256": "664575d274b30fb919632ba79e547ccace83f88c2a111c4c25ae7412562f70da"
+    },
+    "global_mmlu": {
+      "dataset": "CohereLabs/Global-MMLU",
+      "config": "el",
+      "revision": "0e619dbeb34206cd48705a1a0ea7fb21cae09993",
+      "split": "test",
+      "shots": 5,
+      "expected_samples": 14042,
+      "data_sha256": "93dbd8f134a7308c89d22e8dc9ffed58e8983ed31b1cbaba7efaa1f32b266dbe"
+    },
+    "arc_easy": {
+      "dataset": "ilsp/arc_greek",
+      "config": "ARC-Easy",
+      "revision": "11527994a1646b716d52fdd4cc9d63cfe9275fa4",
+      "split": "test",
+      "shots": 25,
+      "expected_samples": 2376,
+      "data_sha256": "419ce54215379b9a8adfe20107ae784cd931e61ea00cd7a9fd8b7f7b55027a91"
+    },
+    "arc_challenge": {
+      "dataset": "ilsp/arc_greek",
+      "config": "ARC-Challenge",
+      "revision": "11527994a1646b716d52fdd4cc9d63cfe9275fa4",
+      "split": "test",
+      "shots": 25,
+      "expected_samples": 1168,
+      "data_sha256": "620e52c7614796209694b82e28d2345b25e09667fbdf2cd5b30ef98581027a1d"
+    },
+    "hellaswag": {
+      "dataset": "ilsp/hellaswag_greek",
+      "config": "default",
+      "revision": "ac871418b051baaf0fe8fbd5d5f335d5fa8a1d66",
+      "split": "validation",
+      "shots": 10,
+      "expected_samples": 10024,
+      "data_sha256": "7b5eac9fba41caae5c5b25d946bad62806db075e6358f16a0feb344a1f727b98"
+    },
+    "truthfulqa": {
+      "dataset": "ilsp/truthful_qa_greek",
+      "config": "multiple_choice",
+      "revision": "6f02750174de53fb417dfe067b0df52b86da0f56",
+      "split": "train",
+      "shots": 0,
+      "expected_samples": 817,
+      "data_sha256": "7ae8ac72c5643b6d2d9a465d99a1d32f1ebd7e57abaa6619067f583bcc151004"
+    },
+    "belebele": {
+      "dataset": "facebook/belebele",
+      "config": "ell_Grek",
+      "revision": "7899cdfa4e1e0d733fd77c848e2c273cb1d32be2",
+      "split": "test",
+      "shots": 5,
+      "expected_samples": 900,
+      "data_sha256": "c6e5f86a477dc8c3c5d078302569b2a76a7812e3dc3a5c9b430a6da4839bbbbe"
+    }
+  }
+}

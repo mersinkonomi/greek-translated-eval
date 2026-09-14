@@ -35,7 +35,10 @@ try:
     from vllm import LLM, SamplingParams, TokensPrompt
     from vllm.lora.request import LoRARequest
     from vllm.transformers_utils.tokenizer import get_tokenizer
-    from vllm.utils import get_open_port
+    try:
+        from vllm.utils import get_open_port
+    except ImportError:
+        from vllm.utils.network_utils import get_open_port
 
     if parse_version(version("vllm")) >= parse_version("0.8.3"):
         from vllm.entrypoints.chat_utils import resolve_hf_chat_template

@@ -34,7 +34,10 @@ class HFMultimodalLM(HFLM):
     An abstracted Hugging Face model class for multimodal LMs like Llava and Idefics.
     """
 
-    AUTO_MODEL_CLASS = transformers.AutoModelForVision2Seq
+    # Transformers 5 renamed this API; keep both supported entry points.
+    AUTO_MODEL_CLASS = getattr(transformers, "AutoModelForVision2Seq", None) or (
+        transformers.AutoModelForImageTextToText
+    )
     MULTIMODAL = True  # flag to indicate, for now, that this model type can run multimodal requests
 
     def __init__(

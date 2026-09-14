@@ -1,0 +1,45 @@
+# Copy to models.yaml (gitignored), then replace every /absolute/path placeholder.
+# Existing Hugging Face checkpoint/snapshot directories only; weights are not downloaded.
+engine:
+  dtype: bfloat16
+  max_length: 65536
+  max_gen_toks: 32768
+  gpu_memory_utilization: 0.80
+  min_free_gpu_fraction: 0.82
+  max_num_seqs: 16
+  max_num_batched_tokens: 8192
+  mc2_max_num_batched_tokens: 1024
+  enforce_eager: true
+  seed: 1234
+  completion_batch_size: 128
+
+models:
+  - name: Horizon-mid4-Base
+    path: /absolute/path/to/K2-Horizon-3.7B-mid_4
+    profile: k2_base
+    # Model AND tokenizer must be the Base snapshot, not the main/instruct one.
+    revision: 981a91d15a76f97c22ebf704d6026a84bf72bdb2
+    trust_remote_code: true
+
+  - name: Qwen3.5-4B
+    path: /absolute/path/to/Qwen3.5-4B
+    profile: qwen_instruct
+    trust_remote_code: false
+
+  - name: Qwen3.5-4B-Base
+    path: /absolute/path/to/Qwen3.5-4B-Base
+    profile: qwen_base
+    trust_remote_code: false
+
+# For other supported architectures, remove the entries above and add yours:
+# - name: My-local-model
+#   path: /absolute/path/to/model
+#   profile: generic_base  # or generic_chat for a tokenizer with a chat template
+#   trust_remote_code: false
+#   add_bos_token: true  # generic_base only: match your tokenizer's native BOS convention
+#   generation:
+#     temperature: 1.0
+#     top_p: 0.95
+#     top_k: -1
+#     presence_penalty: 0.0
+#     repetition_penalty: 1.0
